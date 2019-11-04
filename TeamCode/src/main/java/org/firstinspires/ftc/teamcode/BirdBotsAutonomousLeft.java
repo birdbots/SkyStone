@@ -7,7 +7,9 @@ import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.Gyroscope;
 import com.qualcomm.robotcore.hardware.Servo;
 
-import static java.lang.Math.abs;
+import static org.firstinspires.ftc.teamcode.AutonomousConstants.FWD_DURATION;
+import static org.firstinspires.ftc.teamcode.AutonomousConstants.PARK_DURATION;
+import static org.firstinspires.ftc.teamcode.AutonomousConstants.TURN_DURATION;
 
 @Autonomous
 public class BirdBotsAutonomousLeft extends LinearOpMode {
@@ -50,9 +52,9 @@ public class BirdBotsAutonomousLeft extends LinearOpMode {
         setClaws();
         setPlow();
 
-        move(0.8, 0.8, 0.5);
-        move(0.8, -0.8, 1.66);
-        move(0.8, 0.8, 2);
+        move(0.8, 0.8, FWD_DURATION);
+        move(0.8, -0.8, TURN_DURATION);
+        move(0.8, 0.8, PARK_DURATION);
 
         telemetry.addData("Status", "Running");
         telemetry.update();
